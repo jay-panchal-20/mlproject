@@ -15,13 +15,13 @@ from src.utils import save_obj
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_of_file_path = os.path.join('arifact','preprocessor.pkl')
+    preprocessor_of_file_path = os.path.join('artifact','preprocessor.pkl')
 
 class DataTransformation:
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
 
-    def get_data_tranformer_object(slef):
+    def get_data_tranformer_object(self):
         '''
         This function is responsible for data transformation
         '''
@@ -93,7 +93,7 @@ class DataTransformation:
 
             test_arr = np.c_[
                 input_feature_test_arr,
-                np.array(input_feature_test_df)
+                np.array(target_feature_test_df)
             ]
 
             logging.info("saved preprocessing object.")
